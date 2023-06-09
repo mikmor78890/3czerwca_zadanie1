@@ -1,0 +1,28 @@
+using System;
+
+public class MyProgram
+{
+    public static void Main(string[] args)
+    {
+        double a, b, c, d, x, y, z;
+        
+        Console.WriteLine("wpisz a, b, c, d, aby uzyskać x oraz y z x/y = a/b+c/d");
+        a = inputValue();
+        b = inputValue();
+        c = inputValue();
+        d = inputValue();
+        x = a * d + c * b;
+        y = b * d;
+        Console.WriteLine(x);
+        Console.WriteLine(y);
+    }
+    
+    // .NET can only read single characters or entire lines from the
+    // console. The following function safely reads a double value.
+    private static double inputValue()
+    {
+        double result;
+        while (!double.TryParse(Console.ReadLine(), out result));
+        return result;
+    }
+}
